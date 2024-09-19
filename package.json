@@ -2,9 +2,11 @@
   "name": "laboration2",
   "version": "1.0.0",
   "description": "Laboration 2 for the course 1DV610 at LNU",
-  "main": "app.js",
+  "main": "src/app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "test": "npx --node-options=--experimental-vm-modules jest || exit 0"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/kkwydragonflame/L2/issues"
   },
-  "homepage": "https://github.com/kkwydragonflame/L2#readme"
+  "homepage": "https://github.com/kkwydragonflame/L2#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
