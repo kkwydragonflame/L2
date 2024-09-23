@@ -1,4 +1,4 @@
-export class PlayingCard {
+export class StandardPlayingCard {
   #suit
   #rank
 

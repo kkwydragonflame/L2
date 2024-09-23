@@ -1,18 +1,5 @@
-import { PlayingCard } from './playingCard.js'
+import { StandardPlayingCard } from './standardPlayingCard.js'
 
-let card = new PlayingCard('♠', 'A')
+let card = new StandardPlayingCard('♠', 'A')
 
 console.log(card)
-
-let count = 0
-for(let i = 1; i <= 3; ++i ) 
-  count = count + i
-  console.log(count)
-
-
-let value = 'foo'
-{
-  let value = 'bar'
-  console.log(value)
-}
-console.log(value)
