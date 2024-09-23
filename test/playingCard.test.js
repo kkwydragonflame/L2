@@ -30,3 +30,15 @@ test('check card value for face cards', () => {
   expect(cardQueen.valueOf()).toBe(12)
   expect(cardKing.valueOf()).toBe(13)
 })
+
+test('test immutability of cards', () => {
+  let card = new PlayingCard('♥', 'J')
+
+  expect(() => {
+    card.rank = '5'
+  }).toThrow()
+
+  expect(() => {
+    card.suit = '♠'
+  }).toThrow()
+})
