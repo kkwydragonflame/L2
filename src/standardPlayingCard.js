@@ -37,6 +37,7 @@ export class StandardPlayingCard {
   }
 
   valueOf() {
+    // refactor this to improve code quality
     if (this.#rank === 'J') {
       return 11
     } else if (this.#rank === 'Q') {
