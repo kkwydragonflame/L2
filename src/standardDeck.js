@@ -1,9 +1,19 @@
+/**
+ * @author Johanna Eriksson <je224gs@student.lnu.se>
+ * @version 1.0.0
+ */
+
 import { StandardPlayingCard } from './standardPlayingCard.js'
 
-class StandardDeck {
+export class StandardDeck {
+  deck = []
 
   constructor() {
     //Change rank and suits to constants in PlayingCard class for easier deck generation.
-    forEach(rank of StandardPlayingCard) {}
+    for(suit of StandardPlayingCard) {
+      for(rank of StandardPlayingCard) {
+        this.deck.push(new StandardPlayingCard(suit, rank))
+      }
+    }
   }
 }

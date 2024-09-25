@@ -7,7 +7,7 @@ test('create a joker', () => {
 })
 
 test('expect return value to be "Joker"', () => {
-  const joker = new JokerCaord()
+  const joker = new JokerCard()
 
   expect(joker.valueOf()).toBe('Joker')
 })
