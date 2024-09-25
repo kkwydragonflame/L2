@@ -9,8 +9,8 @@ export class StandardDeck {
   deck = []
 
   constructor() {
-    for(suit of StandardPlayingCard) {
-      for(rank of StandardPlayingCard) {
+    for(const suit of StandardPlayingCard.validSuits) {
+      for(const rank of StandardPlayingCard.validRanks) {
         this.deck.push(new StandardPlayingCard(suit, rank))
       }
     }
