@@ -3,4 +3,12 @@
  * @version 1.0.0
  */
 
-class JokerCard {}
+export class JokerCard {
+  constructor() {}
+
+  // valueOf method to return rank value? Depends on game.
+
+  toString() {
+    return 'Joker'
+  }
+}
