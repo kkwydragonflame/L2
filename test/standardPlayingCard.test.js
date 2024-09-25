@@ -1,9 +1,9 @@
-import { PlayingCard } from '../src/playingCard.js'
+import { StandardPlayingCard } from '../src/standardPlayingCard.js'
 
 test('create a valid card', () => {
-  let card = new PlayingCard('♠', 'A')
+  let card = new StandardPlayingCard('♠', 'A')
 
-  expect(card).toBeInstanceOf(PlayingCard)
+  expect(card).toBeInstanceOf(StandardPlayingCard)
 
   expect(card.rank).toBe('A')
   expect(card.suit).toBe('♠')
@@ -11,20 +11,20 @@ test('create a valid card', () => {
 
 test('create a card with invalid suit', () => {
   expect(() => {
-    new PlayingCard('0', 'A')
+    new StandardPlayingCard('0', 'A')
   }).toThrow('Invalid suit')
 })
 
 test('create a card with invalid rank', () => {
   expect(() => {
-    new PlayingCard('♠', '25')
+    new StandardPlayingCard('♠', '25')
   }).toThrow('Invalid rank')
 })
 
 test('check card value for face cards', () => {
-  let cardJack = new PlayingCard('♥', 'J')
-  let cardQueen = new PlayingCard('♥', 'Q')
-  let cardKing = new PlayingCard('♥', 'K')
+  let cardJack = new StandardPlayingCard('♥', 'J')
+  let cardQueen = new StandardPlayingCard('♥', 'Q')
+  let cardKing = new StandardPlayingCard('♥', 'K')
 
   expect(cardJack.valueOf()).toBe(11)
   expect(cardQueen.valueOf()).toBe(12)
@@ -32,7 +32,7 @@ test('check card value for face cards', () => {
 })
 
 test('test immutability of cards', () => {
-  let card = new PlayingCard('♥', 'J')
+  let card = new StandardPlayingCard('♥', 'J')
 
   expect(() => {
     card.rank = '5'
