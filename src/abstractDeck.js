@@ -4,14 +4,23 @@
  * @version 1.0.0
  */
 
-class AbstractDeck {
+export class AbstractDeck {
   constructor() {
     this.deck = []
   }
 
-  shuffle() {}
+  shuffle() {
+    // good shuffle algorithm?
+  }
 
-  drawCard() {}
+  drawCard() {
+    //refactor to tertiary operator
+    if (this.deck.length <= 0) {
+      return 'Deck is out of cards.'
+    } else {
+      return this.deck.shift()
+    }
+  }
 
   remainingCards() {
     return this.deck.length
