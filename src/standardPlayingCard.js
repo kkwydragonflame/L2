@@ -4,6 +4,9 @@
  */
 
 export class StandardPlayingCard {
+  static validSuits = ['♠', '♣', '♥', '♦']
+  static validRanks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+
   #suit
   #rank
 
@@ -16,8 +19,7 @@ export class StandardPlayingCard {
     //valid suits &#9824; &#9827; &#9829; &#9830 for black icons
     // valid suits for white icons: ♠ ♣ ♥ ♦ &#9828; &#9825; &#9831; &#9826;
     // ['♠', '♣', '♥', '♦', '♤', '♧', '♡', '♢']
-    const validSuits = ['♠', '♣', '♥', '♦']
-    if (validSuits.includes(suit)) {
+    if (StandardPlayingCard.validSuits.includes(suit)) {
       this.#suit = suit
     } else {
       throw new Error('Invalid suit')
@@ -29,8 +31,7 @@ export class StandardPlayingCard {
   }
 
   #setRank(rank) {
-    const validRanks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-    if (validRanks.includes(rank)) {
+    if (StandardPlayingCard.validRanks.includes(rank)) {
       this.#rank = rank
     } else {  
       throw new Error('Invalid rank')

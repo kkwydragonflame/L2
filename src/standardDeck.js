@@ -9,7 +9,6 @@ export class StandardDeck {
   deck = []
 
   constructor() {
-    //Change rank and suits to constants in PlayingCard class for easier deck generation.
     for(suit of StandardPlayingCard) {
       for(rank of StandardPlayingCard) {
         this.deck.push(new StandardPlayingCard(suit, rank))

@@ -5,6 +5,6 @@ let card = new StandardPlayingCard('♠', 'A')
 
 console.log(card)
 
-let deck = new StandardDeck()
+// let deck = new StandardDeck()
 
-console.log(deck)
+// console.log(deck)
