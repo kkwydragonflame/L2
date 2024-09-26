@@ -13,9 +13,21 @@ test('ensure the deck is correctly shuffled', () => {
 
   deck.shuffle()
 
-  expect(deck.cards).not.toBe(unshuffledDeck)
+  let sameOrder = 0
+  let differentOrder = 0
+
+  for(let i = 0; i < deck.cards.length; i++) {
+    if(deck.cards[i].rank === unshuffledDeck[i].rank && deck.cards[i].suit === unshuffledDeck[i].suit) {
+      sameOrder++
+    } else {
+      differentOrder++
+    }
+  }
+
+  expect(differentOrder).toBeGreaterThan(sameOrder)
+  //expect(deck.cards).not.toEqual(unshuffledDeck)
 })
 
-test('deal a card')
+test.todo('deal a card')
 
-test('check remaining cards in deck')
+test.todo('check remaining cards in deck')
