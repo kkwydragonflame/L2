@@ -14,18 +14,15 @@ test('ensure the deck is correctly shuffled', () => {
   deck.shuffle()
 
   let sameOrder = 0
-  let differentOrder = 0
 
   for(let i = 0; i < deck.cards.length; i++) {
     if(deck.cards[i].rank === unshuffledDeck[i].rank && deck.cards[i].suit === unshuffledDeck[i].suit) {
       sameOrder++
-    } else {
-      differentOrder++
     }
   }
 
-  expect(differentOrder).toBeGreaterThan(sameOrder)
-  //expect(deck.cards).not.toEqual(unshuffledDeck)
+  // Less than 30% of the cards may retain their starting position after shuffle for the test to pass.
+  expect(sameOrder).toBeLessThan(deck.cards.length * 0.3)
 })
 
 test.todo('deal a card')
