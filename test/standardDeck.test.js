@@ -13,5 +13,9 @@ test('ensure the deck is correctly shuffled', () => {
 
   deck.shuffle()
 
-  expect(deck).not.toEqual(unshuffledDeck)
+  expect(deck.cards).not.toBe(unshuffledDeck)
 })
+
+test('deal a card')
+
+test('check remaining cards in deck')

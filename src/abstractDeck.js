@@ -29,7 +29,7 @@ export class AbstractDeck {
     }
   }
 
-  remaininCards() {
+  remainingCards() {
     return this.cards.length
   }
 }
