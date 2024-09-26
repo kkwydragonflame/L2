@@ -8,4 +8,10 @@ console.log(card)
 let deck = new StandardDeck()
 
 console.log(deck)
-console.log(deck.deck.length)
+console.log(deck.cards.length)
+
+let unshuffledDeck = [...deck.cards]
+
+deck.shuffle()
+
+console.log(unshuffledDeck)
