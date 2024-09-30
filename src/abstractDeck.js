@@ -20,6 +20,10 @@ export class AbstractDeck {
     return [...this.#cards]
   }
 
+  get originalDeck() {
+    return [...this.#originalDeck]
+  }
+
   addCardToTopOfDeck(card) {
     this.#cards.unshift(card)
   }
