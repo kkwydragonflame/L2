@@ -8,6 +8,9 @@ export class AbstractDeck {
   #cards
 
   constructor() {
+    if (this.constructor === AbstractDeck) {
+      throw new Error('Abstract class cannot be instantiated.')
+    }
     this.#cards = []
   }
 
