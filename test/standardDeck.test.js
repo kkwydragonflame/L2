@@ -64,6 +64,8 @@ test('reset deck', () => {
   const deck = new StandardDeck()
 
   const copyOfDeck = [...deck.cards]
+  
+  deck.createRestorePoint()
 
   deck.dealCard()
 

@@ -6,12 +6,14 @@
 
 export class AbstractDeck {
   #cards
+  #originalDeck
 
   constructor() {
     if (this.constructor === AbstractDeck) {
       throw new Error('Abstract class cannot be instantiated.')
     }
     this.#cards = []
+    this.#originalDeck = []
   }
 
   get cards() {
@@ -41,5 +43,13 @@ export class AbstractDeck {
 
   remainingCards() {
     return this.#cards.length
+  }
+
+  createRestorePoint() {
+    this.#originalDeck = [...this.#cards]
+  }
+
+  resetDeck() {
+    this.#cards = [...this.#originalDeck]
   }
 }
