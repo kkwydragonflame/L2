@@ -45,11 +45,14 @@ export class AbstractDeck {
     return this.#cards.length
   }
 
-  createRestorePoint() {
+  saveCurrentState() {
     this.#originalDeck = [...this.#cards]
   }
 
   resetDeck() {
+    if(this.#originalDeck.length === 0) {
+      throw new Error('No state saved. Please create a restore point before resetting deck.')
+    }
     this.#cards = [...this.#originalDeck]
   }
 }
