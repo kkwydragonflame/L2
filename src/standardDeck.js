@@ -1,4 +1,5 @@
 /**
+ * A standard deck of 52 playing cards. Options to add jokers to deck.
  * @author Johanna Eriksson <je224gs@student.lnu.se>
  * @version 1.0.0
  */
@@ -25,11 +26,23 @@ export class StandardDeck extends AbstractDeck {
     if(jokerCount < 2) {
       this.addCardToBottomOfDeck(new JokerCard())
     } else {
-      throw new Error('Cannot add more than two jokers to deck')
+      throw new Error('Cannot add more than two jokers to deck.')
     }
   }
 
-  // add method, to add a card to deck. check for duplicates validation.
+  addCardToBottomOfDeck(card) {
+    if(this.#doesCardExistInDeck(card)) {
+      throw new Error('Card already exists in deck.')
+    } else {
+      super.addCardToBottomOfDeck(card)
+    }
+  }
+
+  #doesCardExistInDeck(card) {
+    return this.cards.some(existingCard => 
+      existingCard.suit === card.suit && existingCard.rank === card.rank
+    )
+  }
 
   //
 }
