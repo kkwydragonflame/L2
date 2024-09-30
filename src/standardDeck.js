@@ -5,6 +5,7 @@
 
 import { AbstractDeck } from './abstractDeck.js'
 import { StandardPlayingCard } from './standardPlayingCard.js'
+import { JokerCard } from './jokerCard.js'
 
 export class StandardDeck extends AbstractDeck {
   constructor() {
@@ -13,6 +14,18 @@ export class StandardDeck extends AbstractDeck {
       for(const rank of StandardPlayingCard.validRanks) {
         this.addCardToBottomOfDeck(new StandardPlayingCard(suit, rank))
       }
+    }
+  }
+
+  addJokerToDeck() {
+    const jokerCount = this.cards.reduce((count, card) => {
+      return card instanceof JokerCard ? count++ : count
+    }, 0)
+
+    if(jokerCount < 2) {
+      this.addCardToBottomOfDeck(new JokerCard())
+    } else {
+      throw new Error('Cannot add more than two jokers to deck')
     }
   }
 

@@ -1,4 +1,5 @@
 import { StandardDeck } from '../src/standardDeck'
+import { JokerCard } from '../src/jokerCard'
 
 test('generate a deck of 52 cards', () => {
   const deck = new StandardDeck()
@@ -75,7 +76,7 @@ test('reset deck', () => {
 test('add joker to deck', () => {
   const deck = new StandardDeck()
 
-  deck.addJoker()
+  deck.addJokerToDeck()
 
   expect(deck.remainingCards()).toBe(53)
   expect(deck.cards[deck.remainingCards() - 1]).toBeInstanceOf(JokerCard)
