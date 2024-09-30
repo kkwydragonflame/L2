@@ -11,7 +11,7 @@ export class StandardDeck extends AbstractDeck {
     super()
     for(const suit of StandardPlayingCard.validSuits) {
       for(const rank of StandardPlayingCard.validRanks) {
-        this.addCard(new StandardPlayingCard(suit, rank))
+        this.addCardToBottomOfDeck(new StandardPlayingCard(suit, rank))
       }
     }
   }

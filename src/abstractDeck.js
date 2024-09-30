@@ -11,7 +11,15 @@ export class AbstractDeck {
     this.#cards = []
   }
 
-  addCard(card) {
+  get cards() {
+    return [...this.#cards]
+  }
+
+  addCardToTopOfDeck(card) {
+    this.#cards.unshift(card)
+  }
+
+  addCardToBottomOfDeck(card) {
     this.#cards.push(card)
   }
 
