@@ -5,31 +5,30 @@
  */
 
 export class AbstractDeck {
-  cards
+  #cards
 
   constructor() {
-    this.cards = []
+    this.#cards = []
+  }
+
+  addCard(card) {
+    this.#cards.push(card)
   }
 
   shuffle() {
     // Fisher-Yates shuffle algorithm.
-    for(let i = this.cards.length - 1; i > 0; i--) {
+    for(let i = this.#cards.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
 
-      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]]
+      [this.#cards[i], this.#cards[j]] = [this.#cards[j], this.#cards[i]]
     }
   }
 
-  drawCard() {
-    //refactor to tertiary operator
-    if (this.cards.length <= 0) {
-      return 'Deck is out ofcards.'
-    } else {
-      return this.cards.shift()
-    }
+  dealCard() {
+    return this.#cards.length <= 0 ? 'Deck is out of cards.' : this.#cards.shift()
   }
 
   remainingCards() {
-    return this.cards.length
+    return this.#cards.length
   }
 }
