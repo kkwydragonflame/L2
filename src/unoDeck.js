@@ -10,8 +10,11 @@ import { UnoCard } from './unoCard.js'
 export class UnoDeck extends AbstractDeck {
   constructor() {
     super()
-    for(const colour of UnoCard.validColours) {
-      for(const rank of UnoCard.validRanks) {
+    for(const rank of UnoCard.validRanks) {
+      for(const colour of UnoCard.validColours) {
+        if(colour === 'wild') {
+          continue
+        }
         if (rank === 0) {
           this.addCardToBottomOfDeck(new UnoCard(colour, rank))
         } else {

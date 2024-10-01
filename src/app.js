@@ -1,5 +1,6 @@
 import { StandardPlayingCard } from './standardPlayingCard.js'
 import { StandardDeck } from './standardDeck.js'
+import { UnoDeck } from './unoDeck.js'
 
 let card = new StandardPlayingCard('♠', 'A')
 
@@ -15,3 +16,6 @@ let unshuffledDeck = [...deck.cards]
 deck.shuffle()
 
 console.log(unshuffledDeck)
+
+const unoDeck = new UnoDeck()
+console.log(...unoDeck.cards.toString())
