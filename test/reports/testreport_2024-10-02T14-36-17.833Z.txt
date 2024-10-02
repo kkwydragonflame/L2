@@ -1,0 +1,80 @@
+------------------------|---------|----------|---------|---------|-------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+------------------------|---------|----------|---------|---------|-------------------
+All files               |   87.02 |     88.7 |   97.05 |   86.71 |                   
+ abstractDeck.js        |   88.88 |    83.33 |      90 |   88.23 | 28,58             
+ app.js                 |       0 |      100 |     100 |       0 | 5-21              
+ deckGenerator.js       |     100 |      100 |     100 |     100 |                   
+ jokerCard.js           |     100 |      100 |     100 |     100 |                   
+ killeCard.js           |   96.15 |       95 |     100 |   96.15 | 47                
+ killeDeck.js           |     100 |      100 |     100 |     100 |                   
+ standardDeck.js        |   92.85 |       75 |     100 |   92.85 | 29                
+ standardPlayingCard.js |   85.71 |       75 |     100 |   85.71 | 53-56             
+ unoCard.js             |     100 |      100 |     100 |     100 |                   
+ unoDeck.js             |     100 |      100 |     100 |     100 |                   
+------------------------|---------|----------|---------|---------|-------------------
+
+Debugger attached.
+(node:17680) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS test/abstractDeck.test.js
+  √ should not be able to instantiate an abstract class (14 ms)
+  √ should ensure the deck is correctly shuffled (2 ms)
+  √ should deal a card from top of deck (2 ms)
+  √ should deal a card from bottom of deck (1 ms)
+  √ should check remaining cards in deck (5 ms)
+  √ should notify when the deck is out of cards (1 ms)
+  √ should save the current state of the deck (2 ms)
+  √ should reset the deck to its original state
+
+PASS test/deckGenerator.test.js
+  √ DeckGenerator generates a standard deck (4 ms)
+  √ DeckGenerator generates an uno deck (2 ms)
+  √ DeckGenerator generates an kille deck (2 ms)
+  √ DeckGenerator throws an error for an invalid deck type (12 ms)
+
+PASS test/killeCard.test.js
+  √ create a valid card (2 ms)
+  √ create an invalid card (11 ms)
+  √ check card value of face cards (1 ms)
+  √ test immutability of cards (1 ms)
+  √ test toString method (1 ms)
+
+PASS test/unoDeck.test.js
+  √ create a valid deck (2 ms)
+  ✎ todo add method logic
+
+PASS test/killeDeck.test.js
+  √ create a valid deck (2 ms)
+  √ should not be able to add more than two of the same card (7 ms)
+
+PASS test/unoCard.test.js
+  √ create a valid card (1 ms)
+  √ create a card with invalid colour (9 ms)
+  √ create a card with invalid rank (1 ms)
+  √ ensure special cards are valid
+  √ test immutability of cards (1 ms)
+  √ check toString method
+
+PASS test/standardDeck.test.js
+  √ generate a deck of 52 cards (6 ms)
+  √ add joker to deck (3 ms)
+  √ should not be able to add a card that already exists in the deck (16 ms)
+
+PASS test/standardPlayingCard.test.js
+  √ create a valid card (3 ms)
+  √ create a card with invalid suit (11 ms)
+  √ create a card with invalid rank (1 ms)
+  √ check card value for face cards
+  √ test immutability of cards (1 ms)
+
+PASS test/jokerCard.test.js
+  √ create a joker (7 ms)
+  √ expect return value to be "Joker"
+
+Test Suites: 9 passed, 9 total
+Tests:       1 todo, 36 passed, 37 total
+Snapshots:   0 total
+Time:        3.159 s
+Ran all test suites.
+Waiting for the debugger to disconnect...

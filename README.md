@@ -65,9 +65,16 @@ To run tests;
 
 ### Test report
 
+Test reports can be found in ___test/reports___ folder.
+
+Further test report files can be done with `npm run test:report`
+
 ## Issues/Bugs
 
 Please report any issues found on __[github](https://github.com/kkwydragonflame/L2/issues)__.
+
+Please attach a testreport when reporting an issue.
+___npm run test:report___ will generate a reportfile.
 
 ## License
 
