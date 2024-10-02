@@ -3,8 +3,8 @@
  * @version 1.0.0
  */
 
-import { AbstractDeck } from './abstractDeck';
-import { KilleCard } from './killeCard'
+import { AbstractDeck } from './abstractDeck.js'
+import { KilleCard } from './killeCard.js'
 
 export class KilleDeck extends AbstractDeck {
   constructor() {
