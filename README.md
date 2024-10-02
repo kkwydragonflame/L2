@@ -5,17 +5,17 @@ This is the beginnings of a small lib to generate different kinds of game tools.
 * A UNO deck of 108 cards, not including the extra cards from 2018 onwards.
 * A Kille deck.
 
-In the future this will also be able to generate different kind of die, and more card decks.
+In future versions, it will also support generating dice and additional types of card decks.
 
-## Example
+## Example Usage
 
-Import deckGenerator into your file.  
-```
+To generate a deck of cards, start by importing DeckGenerator.  
+```js
 import { DeckGenerator } from './src/deckGenerator'
 ```
 
-Use deckGenerator.generateDeck() to create your deck of cards. Takes the arguments; ___'standard'___, ___'uno'___, or ___'kille'___.  
-```
+Use deckGenerator.generateDeck() to create your deck of cards. The method accepts one of the following arguments; ___'standard'___, ___'uno'___, or ___'kille'___.  
+```js
 const standardDeck = DeckGenerator.generateDeck('standard')
 ```
 
@@ -24,12 +24,13 @@ For more examples see the __demoApp.js__ in src folder.
 ## Installation
 
 Download or clone the repo on [github](https://github.com/kkwydragonflame/L2).
+```bash
+git clone https://github.com/kkwydragonflame/L2
+```
 
 Import the code into your project.
 
-If you wish to run the tests for yourself you need to install Jest with `npm install`.
-
-No other dependencies at the current time.
+Currently, no other dependencies are required.
 
 ## Current version
 
@@ -47,9 +48,13 @@ All decks have the following methods;
 * **saveCurrentState()** - creates a copy of the current deck, preserving the state and order of the cards.
 * **resetDeck()** - uses the created copy to return to a previous state.
 
-**StandardDeck** also have the following methods;
+## Deck Specific Methods
+
+**StandardDeck**:
 
 * **addJokerToDeck()** - adds two jokers to the deck.
+
+## Card Classes
 
 The classes **jokerCard**, **unoCard**, and **killeCard** have the following methods;
 
@@ -57,30 +62,40 @@ The classes **jokerCard**, **unoCard**, and **killeCard** have the following met
 
 The classes **killeCard** and **standardPlayingCard** have the following methods;
 
-* **valueOf()** - returns the numerary value of the card, uses both integers and floating point numbers (in the case of killeCard).
+* **valueOf()** - returns the numerical value of the card, uses both integers and floating point numbers (in the case of killeCard).
 
 ## Testing
 
-Testing has been done with Jest. You'll find all test suites in the test folder.
+Testing is been done with Jest. You'll find all test suites in the `test` folder.
 
-To run tests;
-  * First make sure you have done `npm install`.
-    This will install Jest listed under ___devDependency___ in package.json.
-  * Then run the tests with `npm test`.
+To run the tests:
+  1. Make sure Jest is installed
+      ```bash
+      npm install
+      ```
+  2. Run the tests 
+      ```
+      npm test
+      ```
 
 ### Test report
 
-Test reports can be found in __test/reports__ folder.
+Test reports can be found in the `test/reports` folder.
 
-Further test report files can be generated with `npm run test:report`.
+Further test report files can be generated with 
+```bash
+npm run test:report
+```
 
 ## Issues/Bugs
 
-Please report any issues found on __[github](https://github.com/kkwydragonflame/L2/issues)__.
+Please report any issues found on __[GitHub Issues](https://github.com/kkwydragonflame/L2/issues)__ page.
 
-Please attach a testreport when reporting an issue.
-___npm run test:report___ will generate a reportfile.
+Please attach a testreport when reporting an issue. You can generate one using: 
+```bash
+npm run test:report
+```
 
 ## License
 
-This project is licensed under __[MIT](https://en.wikipedia.org/wiki/MIT_License)__.
+This project is licensed under the __[MIT License](https://en.wikipedia.org/wiki/MIT_License)__.
