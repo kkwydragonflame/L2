@@ -6,3 +6,5 @@ Some card classes have valueOf, others have toString, some have both. Change for
 
 Refactor the method to check if cards already exists in decks to be on the abstract deck class and take an argument of how many cards may exist in the deck.
 Refactor to avoid code repeating, since there's two methods to add cards to/back to the deck (addCardToTopOfDeck and addCardToBottomOfDeck), and both need checks.
+
+Refactor generating a standard deck to be able to take argument of adding jokers or not at start.

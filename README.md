@@ -6,13 +6,23 @@ In the future this will also be able to generate different kind of die, and more
 
 ## Example
 
+Import deckGenerator into your file.  
+```
+import { DeckGenerator } from './src/deckGenerator'
+```
+
+Use deckGenerator.generateDeck() to create your deck of cards. Takes the arguments; ___'standard'___, ___'uno'___, or ___'kille'___.  
+```
+const standardDeck = DeckGenerator.generateDeck('standard')
+```
+
 ## Installation
 
 Download or clone the repo on [github](https://github.com/kkwydragonflame/L2).
 
 Import the code into your project.
 
-If you wish to run the tests for yourself you need to install Jest with ```npm install```.
+If you wish to run the tests for yourself you need to install Jest with `npm install`.
 
 No other dependencies at the current time.
 
@@ -49,17 +59,16 @@ The classes **killeCard** and **standardPlayingCard** have the following methods
 Testing has been done with Jest. You'll find all test suites in the test folder.
 
 To run tests;
-  * First make sure you have done
-    ``` npm install ```.
-    This will install Jest listed under devDependency.
-  * Then run the tests with ```npm test```.
+  * First make sure you have done `npm install`.
+    This will install Jest listed under ___devDependency___ in package.json.
+  * Then run the tests with `npm test`.
 
 ### Test report
 
 ## Issues/Bugs
 
-Please report any issues found on [github](https://github.com/kkwydragonflame/L2/issues).
+Please report any issues found on __[github](https://github.com/kkwydragonflame/L2/issues)__.
 
 ## License
 
-This project is licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License).
+This project is licensed under __[MIT](https://en.wikipedia.org/wiki/MIT_License)__.
