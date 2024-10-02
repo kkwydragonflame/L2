@@ -1,6 +1,9 @@
 # Game Tool Generator
 
-This is the beginnings of a small lib to generate different kinds of game tools. At the moment it generates only 3 different kinds of card decks; A Standard 52 card deck (with options to add Jokers), a UNO deck, and a Kille deck.
+This is the beginnings of a small lib to generate different kinds of game tools. At the moment it generates only 3 different kinds of card decks; 
+* A Standard 52 card deck (with options to add Jokers).
+* A UNO deck of 108 cards, not including the extra cards from 2018 onwards.
+* A Kille deck.
 
 In the future this will also be able to generate different kind of die, and more card decks.
 
@@ -15,6 +18,8 @@ Use deckGenerator.generateDeck() to create your deck of cards. Takes the argumen
 ```
 const standardDeck = DeckGenerator.generateDeck('standard')
 ```
+
+For more examples see the __demoApp.js__ in src folder.
 
 ## Installation
 
@@ -65,9 +70,9 @@ To run tests;
 
 ### Test report
 
-Test reports can be found in ___test/reports___ folder.
+Test reports can be found in __test/reports__ folder.
 
-Further test report files can be done with `npm run test:report`
+Further test report files can be generated with `npm run test:report`.
 
 ## Issues/Bugs
 
