@@ -9,6 +9,12 @@ import { UnoDeck } from './unoDeck.js'
 import { KilleDeck } from './killeDeck.js'
 
 export class DeckGenerator {
+  /**
+   * Generates a deck of cards based on the deck type.
+   * @param {string} deckType - The type of deck to generate.
+   * @returns {AbstractDeck} - A deck of cards.
+   * @throws {Error} - Invalid deck type.
+   */
   static generateDeck(deckType) {
     switch(deckType) {
       case 'standard':

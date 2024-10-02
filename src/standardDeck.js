@@ -18,6 +18,9 @@ export class StandardDeck extends AbstractDeck {
     }
   }
 
+  /**
+   * Adds two jokers to the deck. May not have more than two jokers in deck.
+   */
   addJokerToDeck() {
     const jokerCount = this.cards.reduce((count, card) => {
       return card instanceof JokerCard ? count++ : count
@@ -30,6 +33,10 @@ export class StandardDeck extends AbstractDeck {
     }
   }
 
+  /**
+   * Adds a card to the bottom of the deck. May not have more than one of the same card in deck.
+   * @param {*} card - The card to add to the deck.
+   */
   addCardToBottomOfDeck(card) {
     if(this.#doesCardExistInDeck(card)) {
       throw new Error('Card already exists in deck.')

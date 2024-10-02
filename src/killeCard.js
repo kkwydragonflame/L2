@@ -24,6 +24,10 @@ export class KilleCard {
     return this.#rank
   }
 
+  /**
+   * Returns the value of the card. Integers and floats.
+   * @returns {number} - The value of the card.
+   */
   valueOf() {
     if (this.#rank === 'fool') {
       return 0

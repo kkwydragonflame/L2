@@ -16,9 +16,6 @@ export class StandardPlayingCard {
   }
 
   #setSuit(suit) {
-    //valid suits &#9824; &#9827; &#9829; &#9830 for black icons
-    // valid suits for white icons: ♠ ♣ ♥ ♦ &#9828; &#9825; &#9831; &#9826;
-    // ['♠', '♣', '♥', '♦', '♤', '♧', '♡', '♢']
     if (StandardPlayingCard.validSuits.includes(suit)) {
       this.#suit = suit
     } else {
@@ -42,8 +39,11 @@ export class StandardPlayingCard {
     return this.#rank
   }
 
+  /**
+   * Returns the value of the card. Integers. Ace are counted as 14 by default.
+   * @returns {number} - The value of the card.
+   */
   valueOf() {
-    // refactor this to improve code quality
     if (this.#rank === 'J') {
       return 11
     } else if (this.#rank === 'Q') {
@@ -51,7 +51,7 @@ export class StandardPlayingCard {
     } else if (this.#rank === 'K') {
       return 13
     } else if (this.#rank === 'A') {
-      return 14 //What i ace needs to be counted as one?! Depends on what game you are playing
+      return 14
     } else {
       return parseInt(this.#rank)
     }

@@ -15,6 +15,10 @@ export class KilleDeck extends AbstractDeck {
     }
   }
 
+  /**
+   * Adds a card to the bottom of the deck. May not have more than two of the same card in deck.
+   * @param {*} card - The card to add to the deck.
+   */
   addCardToBottomOfDeck(card) {
     if (this.#doesTwoCardsExistInDeck(card)) {
       throw new Error('May not have more than two of the same card in deck.')

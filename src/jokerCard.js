@@ -6,8 +6,6 @@
 export class JokerCard {
   constructor() {}
 
-  // valueOf method to return rank value? Depends on game.
-
   toString() {
     return 'Joker'
   }

@@ -49,10 +49,16 @@ export class AbstractDeck {
     return this.#cards.length
   }
 
+  /**
+   * Saves the current state of the deck by creating a copy of the current deck.
+   */
   saveCurrentState() {
     this.#originalDeck = [...this.#cards]
   }
 
+  /**
+   * Resets the deck to the state saved by saveCurrentState.
+   */
   resetDeck() {
     if(this.#originalDeck.length === 0) {
       throw new Error('No state saved. Please save state before resetting deck.')
