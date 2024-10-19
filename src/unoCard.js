@@ -24,16 +24,16 @@ export class UnoCard {
     }
   }
 
-  get colour() {
-    return this.#colour
-  }
-
   #setRank(rank) {
     if (UnoCard.validRanks.includes(rank) || UnoCard.specialCards.includes(rank)) {
       this.#rank = rank
     } else {
       throw new Error('Invalid rank.')
     }
+  }
+
+  get colour() {
+    return this.#colour
   }
 
   get rank() {

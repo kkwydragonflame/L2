@@ -44,16 +44,16 @@ export class StandardPlayingCard {
    * @returns {number} - The value of the card.
    */
   valueOf() {
-    if (this.#rank === 'J') {
-      return 11
-    } else if (this.#rank === 'Q') {
-      return 12
-    } else if (this.#rank === 'K') {
-      return 13
-    } else if (this.#rank === 'A') {
-      return 14
-    } else {
-      return parseInt(this.#rank)
+    const rankValues = {
+      J: 11,
+      Q: 12,
+      K: 13,
+      A: 14    
     }
+    return rankValues[this.#rank] || parseInt(this.#rank)
+  }
+
+  toString() {
+    return `${this.#rank}${this.#suit}`
   }
 }
