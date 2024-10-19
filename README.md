@@ -23,14 +23,15 @@ For more examples see the __demoApp.js__ in src folder.
 
 ## Installation
 
-Download or clone the repo on [github](https://github.com/kkwydragonflame/L2).
+#### With npm
 ```bash
-git clone https://github.com/kkwydragonflame/L2
+npm install https://github.com/kkwydragonflame/L2
+```
+#### With yarn
+```bash
+yarn add https://github.com/kkwydragonflame/L2
 ```
 
-Import the code into your project.
-
-Currently, no other dependencies are required.
 
 ## Current version
 
@@ -56,17 +57,17 @@ All decks have the following methods;
 
 ## Card Classes
 
-The classes **jokerCard**, **unoCard**, and **killeCard** have the following methods;
+All card classes have the following methods;
 
 * **toString()** - return a string representation of the card in question.
 
-The classes **killeCard** and **standardPlayingCard** have the following methods;
+The classes **killeCard** and **standardPlayingCard** also have the following methods;
 
 * **valueOf()** - returns the numerical value of the card, uses both integers and floating point numbers (in the case of killeCard).
 
 ## Testing
 
-Testing is been done with Jest. You'll find all test suites in the `test` folder.
+Testing has been done with Jest. You'll find all test suites in the `test` folder.
 
 To run the tests:
   1. Make sure Jest is installed
@@ -82,7 +83,7 @@ To run the tests:
 
 Test reports can be found in the `test/reports` folder.
 
-Further test report files can be generated with 
+Further test report files can be generated with
 ```bash
 npm run test:report
 ```
@@ -95,6 +96,39 @@ Please attach a testreport when reporting an issue. You can generate one using:
 ```bash
 npm run test:report
 ```
+## If you wish to contribute
+Thank you for your interest in contributing to this project! We appreciate your help in improving the codebase. Please follow these steps to ensure a smooth contribution process:
+
+### Step 1 Create a fork of the repo.
+1. Click the "Fork" button at the top right of the repository page. This will create a copy of the repository under your GitHub account.
+2. Clone your forked repository to your local machine
+```bash
+git clone <your-repository>
+```
+### Step 2 Makes your changes.
+1. Implement your changes.
+2. Commit your changes with a clear and concise commit message. Follow the standard format for commit messages:
+    ```bash
+    [TYPE]: Brief description of changes
+    ```
+    Examples of commit message types include:
+    * __feat__: A new feature
+    * __fix__: A bug fix
+    * __docs__: Documentation changes
+    * __style__: Code style changes (formatting, missing semi-colons, etc.)
+    * __refactor__: Code change that neither fixes a bug nor adds a feature
+    * __test__: Adding missing tests or correcting existing tests
+3. Push your changes to your forked repository.
+
+### Step 3 Create a pull request.
+1. Navigate to the original repository on GitHub and click on "Compare & pull request."
+2. Provide a clear description of your changes and submit the pull request.
+3. Your pull request will be reviewed, and feedback may be provided. Be prepared to make additional changes if necessary.
+
+### Continuous Integration
+
+This project uses Continuous Integration (CI) to ensure code quality. When you submit a pull request, the CI system will automatically run tests to verify that everything works correctly. 
+
 
 ## License
 
