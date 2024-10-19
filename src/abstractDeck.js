@@ -50,7 +50,7 @@ export class AbstractDeck {
   }
 
   /**
-   * Saves the current state of the deck by creating a copy of the current deck.
+   * Saves the current state of the deck by creating a copy.
    */
   saveCurrentState() {
     this.#originalDeck = [...this.#cards]
