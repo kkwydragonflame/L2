@@ -9,7 +9,7 @@ import { KilleCard } from './killeCard.js'
 export class KilleDeck extends AbstractDeck {
   constructor() {
     super()
-    for(const rank of KilleCard.validRanks) {
+    for (const rank of KilleCard.validRanks) {
       this.addCardToBottomOfDeck(new KilleCard(rank))
       this.addCardToBottomOfDeck(new KilleCard(rank))
     }

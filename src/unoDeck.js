@@ -4,15 +4,15 @@
  * @version 1.0.0
  */
 
-import { AbstractDeck } from './abstractDeck.js';
+import { AbstractDeck } from './abstractDeck.js'
 import { UnoCard } from './unoCard.js'
 
 export class UnoDeck extends AbstractDeck {
   constructor() {
     super()
-    for(const rank of UnoCard.validRanks) {
-      for(const colour of UnoCard.validColours) {
-        if(colour === 'wild') {
+    for (const rank of UnoCard.validRanks) {
+      for (const colour of UnoCard.validColours) {
+        if (colour === 'wild') {
           continue
         }
         if (rank === 0) {
@@ -23,7 +23,7 @@ export class UnoDeck extends AbstractDeck {
         }
       }
     }
-    for(let i = 0; i < 4; i++) {
+    for (let i = 0; i < 4; i++) {
       this.addCardToBottomOfDeck(new UnoCard('wild', 'wild'))
       this.addCardToBottomOfDeck(new UnoCard('wild', 'wildDrawFour'))
     }

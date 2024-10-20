@@ -30,7 +30,7 @@ export class StandardPlayingCard {
   #setRank(rank) {
     if (StandardPlayingCard.validRanks.includes(rank)) {
       this.#rank = rank
-    } else {  
+    } else {
       throw new Error('Invalid rank')
     }
   }
@@ -48,7 +48,7 @@ export class StandardPlayingCard {
       J: 11,
       Q: 12,
       K: 13,
-      A: 14    
+      A: 14
     }
     return rankValues[this.#rank] || parseInt(this.#rank)
   }

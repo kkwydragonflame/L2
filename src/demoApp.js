@@ -15,7 +15,7 @@ standardDeck.shuffle()
 console.log(standardDeck.remainingCards())
 
 // This will deal a card from the deck.
-let card = standardDeck.dealCard()
+const card = standardDeck.dealCard()
 
 console.log(card.rank, card.suit)
 
@@ -29,7 +29,7 @@ const killeDeck = DeckGenerator.generateDeck('kille')
 
 // This will deal 7 cards to a player.
 const cardsOnHand = []
-for(let i = 0; i < 7; i++) {
+for (let i = 0; i < 7; i++) {
   cardsOnHand.push(killeDeck.dealCard().toString())
 }
 

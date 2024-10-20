@@ -15,8 +15,8 @@ export class DeckGenerator {
    * @returns {AbstractDeck} - A deck of cards.
    * @throws {Error} - Invalid deck type.
    */
-  static generateDeck(deckType) {
-    switch(deckType) {
+  static generateDeck (deckType) {
+    switch (deckType) {
       case 'standard':
         // How to deal with jokers? Add a new deck type? Have user add jokers manually?
         return new StandardDeck()

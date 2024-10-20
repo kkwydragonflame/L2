@@ -34,8 +34,8 @@ export class AbstractDeck {
 
   shuffle() {
     // Fisher-Yates shuffle algorithm.
-    for(let i = this.#cards.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
+    for (let i = this.#cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
 
       [this.#cards[i], this.#cards[j]] = [this.#cards[j], this.#cards[i]]
     }
@@ -60,7 +60,7 @@ export class AbstractDeck {
    * Resets the deck to the state saved by saveCurrentState.
    */
   resetDeck() {
-    if(this.#originalDeck.length === 0) {
+    if (this.#originalDeck.length === 0) {
       throw new Error('No state saved. Please save state before resetting deck.')
     }
     this.#cards = [...this.#originalDeck]

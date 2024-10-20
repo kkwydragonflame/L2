@@ -4,8 +4,6 @@
  */
 
 export class JokerCard {
-  constructor() {}
-
   toString() {
     return 'Joker'
   }

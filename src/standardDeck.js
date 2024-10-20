@@ -11,8 +11,8 @@ import { JokerCard } from './jokerCard.js'
 export class StandardDeck extends AbstractDeck {
   constructor() {
     super()
-    for(const suit of StandardPlayingCard.validSuits) {
-      for(const rank of StandardPlayingCard.validRanks) {
+    for (const suit of StandardPlayingCard.validSuits) {
+      for (const rank of StandardPlayingCard.validRanks) {
         this.addCardToBottomOfDeck(new StandardPlayingCard(suit, rank))
       }
     }
@@ -26,7 +26,7 @@ export class StandardDeck extends AbstractDeck {
       return card instanceof JokerCard ? count++ : count
     }, 0)
 
-    if(jokerCount < 2) {
+    if (jokerCount < 2) {
       this.addCardToBottomOfDeck(new JokerCard())
     } else {
       throw new Error('Cannot add more than two jokers to deck.')
@@ -38,7 +38,7 @@ export class StandardDeck extends AbstractDeck {
    * @param {*} card - The card to add to the deck.
    */
   addCardToBottomOfDeck(card) {
-    if(this.#doesCardExistInDeck(card)) {
+    if (this.#doesCardExistInDeck(card)) {
       throw new Error('Card already exists in deck.')
     } else {
       super.addCardToBottomOfDeck(card)
@@ -46,7 +46,7 @@ export class StandardDeck extends AbstractDeck {
   }
 
   #doesCardExistInDeck(card) {
-    return this.cards.some(existingCard => 
+    return this.cards.some(existingCard =>
       existingCard.suit === card.suit && existingCard.rank === card.rank
     )
   }

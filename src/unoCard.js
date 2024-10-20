@@ -10,7 +10,7 @@ export class UnoCard {
 
   #colour
   #rank
-  
+
   constructor(colour, rank) {
     this.#setColour(colour)
     this.#setRank(rank)
