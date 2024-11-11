@@ -4,6 +4,8 @@
  * @version 1.0.0
  */
 
+import { EmptyDeckError } from './EmptyDeckError'
+
 export class AbstractDeck {
   #cards
   #originalState
@@ -38,7 +40,10 @@ export class AbstractDeck {
   }
 
   dealCard() {
-    return this.#cards.length <= 0 ? 'Deck is out of cards.' : this.#cards.shift()
+    if (this.#cards.length <= 0) {
+      throw new EmptyDeckError()
+    }
+    return this.#cards.shift()
   }
 
   remainingCards() {
