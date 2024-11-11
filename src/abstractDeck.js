@@ -6,22 +6,18 @@
 
 export class AbstractDeck {
   #cards
-  #originalDeck
+  #originalState
 
   constructor() {
     if (this.constructor === AbstractDeck) {
       throw new Error('Abstract class cannot be instantiated.')
     }
     this.#cards = []
-    this.#originalDeck = []
+    this.#originalState = []
   }
 
   get cards() {
     return [...this.#cards]
-  }
-
-  get originalDeck() {
-    return [...this.#originalDeck]
   }
 
   addCardToTopOfDeck(card) {
@@ -53,16 +49,16 @@ export class AbstractDeck {
    * Saves the current state of the deck by creating a copy.
    */
   saveCurrentState() {
-    this.#originalDeck = [...this.#cards]
+    this.#originalState = [...this.#cards]
   }
 
   /**
    * Resets the deck to the state saved by saveCurrentState.
    */
   resetDeck() {
-    if (this.#originalDeck.length === 0) {
+    if (this.#originalState.length === 0) {
       throw new Error('No state saved. Please save state before resetting deck.')
     }
-    this.#cards = [...this.#originalDeck]
+    this.#cards = [...this.#originalState]
   }
 }
