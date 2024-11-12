@@ -1,4 +1,5 @@
 import { KilleDeck } from '../src/killeDeck'
+import { test, expect } from '@jest/globals'
 
 test('create a valid deck', () => {
   const deck = new KilleDeck()
@@ -10,7 +11,7 @@ test('create a valid deck', () => {
 test('should not be able to add more than two of the same card', () => {
   const deck = new KilleDeck()
 
-  expect(() => 
+  expect(() =>
     deck.addCardToBottomOfDeck(deck.cards[0])
   ).toThrow('May not have more than two of the same card in deck.')
 })

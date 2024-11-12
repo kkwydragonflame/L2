@@ -1,4 +1,5 @@
 import { UnoDeck } from '../src/unoDeck.js'
+import { test, expect } from '@jest/globals'
 
 test('create a valid deck', () => {
   let deck = new UnoDeck()

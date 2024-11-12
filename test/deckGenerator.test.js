@@ -2,6 +2,7 @@ import { DeckGenerator } from '../src/deckGenerator'
 import { StandardDeck } from '../src/standardDeck'
 import { UnoDeck } from '../src/unoDeck'
 import { KilleDeck } from '../src/killeDeck'
+import { test, expect } from '@jest/globals'
 
 test('DeckGenerator generates a standard deck', () => {
   const deck = DeckGenerator.generateDeck('standard')

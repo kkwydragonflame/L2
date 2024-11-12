@@ -1,4 +1,5 @@
 import { UnoCard } from '../src/unoCard.js'
+import { test, expect } from '@jest/globals'
 
 test('create a valid card', () => {
   let card = new UnoCard('red', 0)

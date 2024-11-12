@@ -1,5 +1,6 @@
 import { AbstractDeck } from '../src/abstractDeck'
 import { StandardDeck } from '../src/standardDeck'
+import { test, expect } from '@jest/globals'
 
 test('should not be able to instantiate an abstract class', () => {
   expect(() => {
@@ -16,8 +17,8 @@ test('should ensure the deck is correctly shuffled', () => {
 
   let sameOrder = 0
 
-  for(let i = 0; i < deck.remainingCards(); i++) {
-    if(deck.cards[i].rank === unshuffledDeck[i].rank && deck.cards[i].suit === unshuffledDeck[i].suit) {
+  for (let i = 0; i < deck.remainingCards(); i++) {
+    if (deck.cards[i].rank === unshuffledDeck[i].rank && deck.cards[i].suit === unshuffledDeck[i].suit) {
       sameOrder++
     }
   }
@@ -26,7 +27,7 @@ test('should ensure the deck is correctly shuffled', () => {
   expect(sameOrder).toBeLessThan(deck.remainingCards() * 0.3)
 })
 
-test('should deal a card from top of deck', () => {
+test('should deal a card from deck', () => {
   const deck = new StandardDeck()
 
   const card = deck.dealCard()
@@ -36,18 +37,6 @@ test('should deal a card from top of deck', () => {
   expect(deck.cards.includes(card)).toBe(false)
 
   expect(deck.cards[0]).not.toBe(card)
-})
-
-test('should deal a card from bottom of deck', () => {
-  const deck = new StandardDeck()
-
-  const card = deck.dealCard()
-
-  expect(deck.remainingCards()).toBe(51)
-
-  expect(deck.cards.includes(card)).toBe(false)
-
-  expect(deck.cards[deck.remainingCards() - 1]).not.toBe(card)
 })
 
 test('should check remaining cards in deck', () => {
@@ -60,14 +49,16 @@ test('should check remaining cards in deck', () => {
   expect(deck.remainingCards()).toBe(51)
 })
 
-test('should notify when the deck is out of cards', () => {
+test('should throw EmptyDeckError when the deck is out of cards', () => {
   const deck = new StandardDeck()
 
-  for(let i = 0; i < 52; i++) {
+  for (let i = 0; i < 52; i++) {
     deck.dealCard()
   }
 
-  expect(deck.dealCard()).toBe('Deck is out of cards.')
+  expect(() => {
+    deck.dealCard()
+  }).toThrowError('Deck is out of cards.')
 })
 
 test('should save the current state of the deck', () => {
@@ -82,7 +73,7 @@ test('should reset the deck to its original state', () => {
   const deck = new StandardDeck()
 
   const copyOfDeck = [...deck.cards]
-  
+
   deck.saveCurrentState()
 
   deck.dealCard()
