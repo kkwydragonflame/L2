@@ -36,3 +36,11 @@ Lastly, I’m contemplating refactoring the separate card classes into a single 
 * Add explanatory comments to demoApp.
 * Fix valueOf and toString.
 * Refactor adding cards to deck.
+
+### Items fixed
+* [x] Add explanatory comments to demoApp.
+* [x] Fix valueOf method in killeCard class.
+* [x] Adjust dealCard method to be consistent in return value.
+* [] Fix valueOf and toString to improve consistency.
+* [] Refactor adding cards to deck.
+* [] Refactor unoDeck to improve constructor.

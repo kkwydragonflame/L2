@@ -1,6 +1,6 @@
 /**
  * @author Johanna Eriksson <je224gs@student.lnu.se>
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 export class StandardPlayingCard {
@@ -23,20 +23,12 @@ export class StandardPlayingCard {
     }
   }
 
-  get suit() {
-    return this.#suit
-  }
-
   #setRank(rank) {
     if (StandardPlayingCard.validRanks.includes(rank)) {
       this.#rank = rank
     } else {
       throw new Error('Invalid rank')
     }
-  }
-
-  get rank() {
-    return this.#rank
   }
 
   /**
@@ -55,5 +47,13 @@ export class StandardPlayingCard {
 
   toString() {
     return `${this.#rank}${this.#suit}`
+  }
+
+  get suit() {
+    return this.#suit
+  }
+
+  get rank() {
+    return this.#rank
   }
 }

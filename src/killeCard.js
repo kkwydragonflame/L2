@@ -1,6 +1,6 @@
 /**
  * @author Johanna Eriksson <je224gs@student.lnu.se>
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 export class KilleCard {
@@ -18,10 +18,6 @@ export class KilleCard {
     } else {
       throw new Error('Invalid rank.')
     }
-  }
-
-  get rank() {
-    return this.#rank
   }
 
   /**
@@ -45,5 +41,9 @@ export class KilleCard {
 
   toString() {
     return `${this.#rank}`
+  }
+
+  get rank() {
+    return this.#rank
   }
 }

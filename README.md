@@ -42,8 +42,7 @@ yarn add https://github.com/kkwydragonflame/L2
 All decks have the following methods;
 
 * **shuffle()** - shuffles the cards using the Fisher-Yates algorithm.
-* **addCardToTopOfDeck()** - add or return a card to the top of the deck, ie the first index.
-* **addCardToBottomOfDeck()** - add or return a card to the bottom of the deck, ie the last index.
+* **addCardToDeck()** - add or return a card to the bottom of the deck, ie the last index. Takes an optional parameter specifying how many duplicates are allowed in the deck.
 * **dealCard()** - deals a card from the top of the deck.
 * **remainingCards()** - returns how many cards are left in the deck.
 * **saveCurrentState()** - creates a copy of the current deck, preserving the state and order of the cards.
@@ -53,7 +52,7 @@ All decks have the following methods;
 
 **StandardDeck**:
 
-* **addJokerToDeck()** - adds two jokers to the deck.
+* **addJokerToDeck()** - adds two jokers to the deck. Throws an error if attempting to add more than two.
 
 ## Card Classes
 
@@ -105,7 +104,7 @@ Thank you for your interest in contributing to this project! We appreciate your 
 ```bash
 git clone <your-repository>
 ```
-### Step 2 Makes your changes.
+### Step 2 Make your changes.
 1. Implement your changes.
 2. Commit your changes with a clear and concise commit message. Follow the standard format for commit messages:
     ```bash

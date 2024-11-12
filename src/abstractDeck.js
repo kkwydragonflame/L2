@@ -1,7 +1,7 @@
 /**
  * Base class for all card decks.
  * @author Johanna Eriksson <je224gs@student.lnu.se>
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 import { EmptyDeckError } from './EmptyDeckError'
@@ -18,16 +18,16 @@ export class AbstractDeck {
     this.#originalState = []
   }
 
-  get cards() {
-    return [...this.#cards]
+  addCardToDeck(card, maxDuplicates = 1) {
+    if (this.#checkDuplicates(card, maxDuplicates)) {
+      throw new Error(`Cannot have more than ${maxDuplicates} of the same card in deck.`)
+    } else {
+      this.#cards.push(card)
+    }
   }
 
-  addCardToTopOfDeck(card) {
-    this.#cards.unshift(card)
-  }
-
-  addCardToBottomOfDeck(card) {
-    this.#cards.push(card)
+  #checkDuplicates(card, maxDuplicates) {
+    throw new Error('Method must be implemented by subclass.')
   }
 
   shuffle() {
@@ -65,5 +65,9 @@ export class AbstractDeck {
       throw new Error('No state saved. Please save state before resetting deck.')
     }
     this.#cards = [...this.#originalState]
+  }
+
+  get cards() {
+    return [...this.#cards]
   }
 }
