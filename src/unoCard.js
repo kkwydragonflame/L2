@@ -12,7 +12,7 @@ export class UnoCard {
   #rank
   #isSpecial
 
-  constructor(colour, rank) {
+  constructor(rank, colour) {
     if (UnoCard.specialCards.includes(rank)) {
       this.#setRank(rank)
       this.#isSpecial = true

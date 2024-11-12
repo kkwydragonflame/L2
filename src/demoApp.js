@@ -24,6 +24,8 @@ console.log(card.rank, card.suit)
 // This will generate a deck of 108 Uno cards.
 const unoDeck = DeckGenerator.generateDeck('uno')
 
+unoDeck.addCardToDeck(unoDeck.cards[0], 2)
+
 // This will print the string representation of the card that was dealt.
 console.log(unoDeck.dealCard().toString())
 

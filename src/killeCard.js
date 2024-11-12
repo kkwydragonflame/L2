@@ -36,7 +36,7 @@ export class KilleCard {
       cuckoo: 17,
       harlequin: 18
     }
-    return rankValues[this.#rank] || parseInt(this.#rank)
+    return rankValues[this.#rank] ?? parseInt(this.#rank)
   }
 
   toString() {

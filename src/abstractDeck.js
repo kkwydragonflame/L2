@@ -4,7 +4,7 @@
  * @version 2.0.0
  */
 
-import { EmptyDeckError } from './EmptyDeckError'
+import { EmptyDeckError } from './EmptyDeckError.js'
 
 export class AbstractDeck {
   #cards
@@ -19,16 +19,14 @@ export class AbstractDeck {
   }
 
   addCardToDeck(card, maxDuplicates = 1) {
-    if (this.#checkDuplicates(card, maxDuplicates)) {
+    if (this.checkDuplicates(card, maxDuplicates)) {
       throw new Error(`Cannot have more than ${maxDuplicates} of the same card in deck.`)
     } else {
       this.#cards.push(card)
     }
   }
 
-  #checkDuplicates(card, maxDuplicates) {
-    throw new Error('Method must be implemented by subclass.')
-  }
+  checkDuplicates(card, maxDuplicates) {}
 
   shuffle() {
     // Fisher-Yates shuffle algorithm.

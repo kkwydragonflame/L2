@@ -13,10 +13,10 @@ export class UnoDeck extends AbstractDeck {
     for (const rank of UnoCard.validRanks) {
       for (const colour of UnoCard.validColours) {
         if (rank === 0) {
-          this.addCardToDeck(new UnoCard(colour, rank))
+          this.addCardToDeck(new UnoCard(rank, colour))
         } else {
-          this.addCardToDeck(new UnoCard(colour, rank), 2)
-          this.addCardToDeck(new UnoCard(colour, rank), 2)
+          this.addCardToDeck(new UnoCard(rank, colour), 2)
+          this.addCardToDeck(new UnoCard(rank, colour), 2)
         }
       }
     }
@@ -27,7 +27,7 @@ export class UnoDeck extends AbstractDeck {
     }
   }
 
-  #checkDuplicates(card, maxDuplicates) {
+  checkDuplicates(card, maxDuplicates) {
     const cardCount = this.cards.reduce((count, existingCard) => {
       if (card.isSpecial) {
         return (existingCard.rank === card.rank) ? count + 1 : count

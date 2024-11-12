@@ -12,6 +12,6 @@ test('should not be able to add more than two of the same card', () => {
   const deck = new KilleDeck()
 
   expect(() =>
-    deck.addCardToBottomOfDeck(deck.cards[0])
-  ).toThrow('May not have more than two of the same card in deck.')
+    deck.addCardToDeck(deck.cards[0], 2)
+  ).toThrow('Cannot have more than 2 of the same card in deck.')
 })

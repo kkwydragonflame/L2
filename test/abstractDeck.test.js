@@ -61,25 +61,19 @@ test('should throw EmptyDeckError when the deck is out of cards', () => {
   }).toThrowError('Deck is out of cards.')
 })
 
-test('should save the current state of the deck', () => {
+test('should save the original state and reset to it', () => {
   const deck = new StandardDeck()
 
-  deck.saveCurrentState()
-
-  expect(deck.cards).toEqual(deck.originalDeck)
-})
-
-test('should reset the deck to its original state', () => {
-  const deck = new StandardDeck()
-
-  const copyOfDeck = [...deck.cards]
+  const savedState = [...deck.cards]
 
   deck.saveCurrentState()
 
   deck.dealCard()
+  expect(deck.remainingCards()).toBe(51)
+  expect(deck.cards).not.toEqual(savedState)
 
   deck.resetDeck()
 
   expect(deck.remainingCards()).toBe(52)
-  expect(deck.cards).toEqual(copyOfDeck)
+  expect(deck.cards).toEqual(savedState)
 })

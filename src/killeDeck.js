@@ -27,7 +27,7 @@ export class KilleDeck extends AbstractDeck {
   //   }
   // }
 
-  #checkDuplicates(card, maxDuplicates) {
+  checkDuplicates(card, maxDuplicates) {
     const cardCount = this.cards.reduce((count, existingCard) => {
       return (existingCard.rank === card.rank) ? count + 1 : count
     }, 0)

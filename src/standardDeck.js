@@ -29,12 +29,12 @@ export class StandardDeck extends AbstractDeck {
     } else {
       const jokersToAdd = 2 - jokerCount
       for (let i = 0; i < jokersToAdd; i++) {
-        this.addCardToDeck(new JokerCard())
+        this.addCardToDeck(new JokerCard(), 2)
       }
     }
   }
 
-  #checkDuplicates(card, maxDuplicates) {
+  checkDuplicates(card, maxDuplicates) {
     const cardCount = this.cards.reduce((count, existingCard) => {
       return (existingCard.rank === card.rank && existingCard.suit === card.suit) ? count + 1 : count
     }, 0)
