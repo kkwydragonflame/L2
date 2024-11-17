@@ -1,7 +1,8 @@
 import { StandardPlayingCard } from '../src/standardPlayingCard.js'
+import { test, expect } from '@jest/globals'
 
 test('create a valid card', () => {
-  let card = new StandardPlayingCard('♠', 'A')
+  const card = new StandardPlayingCard('♠', 'A')
 
   expect(card).toBeInstanceOf(StandardPlayingCard)
 
@@ -22,9 +23,9 @@ test('create a card with invalid rank', () => {
 })
 
 test('check card value for face cards', () => {
-  let cardJack = new StandardPlayingCard('♥', 'J')
-  let cardQueen = new StandardPlayingCard('♥', 'Q')
-  let cardKing = new StandardPlayingCard('♥', 'K')
+  const cardJack = new StandardPlayingCard('♥', 'J')
+  const cardQueen = new StandardPlayingCard('♥', 'Q')
+  const cardKing = new StandardPlayingCard('♥', 'K')
 
   expect(cardJack.valueOf()).toBe(11)
   expect(cardQueen.valueOf()).toBe(12)
@@ -32,7 +33,7 @@ test('check card value for face cards', () => {
 })
 
 test('test immutability of cards', () => {
-  let card = new StandardPlayingCard('♥', 'J')
+  const card = new StandardPlayingCard('♥', 'J')
 
   expect(() => {
     card.rank = '5'

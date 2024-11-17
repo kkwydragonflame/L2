@@ -1,0 +1,16 @@
+{
+  "extends": ["standard"],
+  "rules": {
+    "prefer-const": "error",
+    "no-var": "error",
+    "space-before-function-paren": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "rules": {
+        "no-new": "off"
+      }
+    }
+  ]
+}

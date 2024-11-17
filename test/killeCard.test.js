@@ -1,4 +1,5 @@
 import { KilleCard } from '../src/killeCard.js'
+import { test, expect } from '@jest/globals'
 
 test('create a valid card', () => {
   const card = new KilleCard('harlequin')
@@ -8,7 +9,7 @@ test('create a valid card', () => {
 })
 
 test('create an invalid card', () => {
-  expect(() => 
+  expect(() =>
     new KilleCard('queen')
   ).toThrow('Invalid rank.')
 })

@@ -1,48 +1,47 @@
 /**
  * Base class for all card decks.
  * @author Johanna Eriksson <je224gs@student.lnu.se>
- * @version 1.0.0
+ * @version 2.0.0
  */
+
+import { EmptyDeckError } from './EmptyDeckError.js'
 
 export class AbstractDeck {
   #cards
-  #originalDeck
+  #originalState
 
   constructor() {
     if (this.constructor === AbstractDeck) {
       throw new Error('Abstract class cannot be instantiated.')
     }
     this.#cards = []
-    this.#originalDeck = []
+    this.#originalState = []
   }
 
-  get cards() {
-    return [...this.#cards]
+  addCardToDeck(card, maxDuplicates = 1) {
+    if (this.checkDuplicates(card, maxDuplicates)) {
+      throw new Error(`Cannot have more than ${maxDuplicates} of the same card in deck.`)
+    } else {
+      this.#cards.push(card)
+    }
   }
 
-  get originalDeck() {
-    return [...this.#originalDeck]
-  }
-
-  addCardToTopOfDeck(card) {
-    this.#cards.unshift(card)
-  }
-
-  addCardToBottomOfDeck(card) {
-    this.#cards.push(card)
-  }
+  checkDuplicates(card, maxDuplicates) {}
 
   shuffle() {
     // Fisher-Yates shuffle algorithm.
-    for(let i = this.#cards.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
+    for (let i = this.#cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
 
       [this.#cards[i], this.#cards[j]] = [this.#cards[j], this.#cards[i]]
     }
   }
 
   dealCard() {
-    return this.#cards.length <= 0 ? 'Deck is out of cards.' : this.#cards.shift()
+    if (this.#cards.length <= 0) {
+      throw new EmptyDeckError()
+    }
+    return this.#cards.shift()
   }
 
   remainingCards() {
@@ -50,19 +49,23 @@ export class AbstractDeck {
   }
 
   /**
-   * Saves the current state of the deck by creating a copy of the current deck.
+   * Saves the current state of the deck by creating a copy.
    */
   saveCurrentState() {
-    this.#originalDeck = [...this.#cards]
+    this.#originalState = [...this.#cards]
   }
 
   /**
    * Resets the deck to the state saved by saveCurrentState.
    */
   resetDeck() {
-    if(this.#originalDeck.length === 0) {
+    if (this.#originalState.length === 0) {
       throw new Error('No state saved. Please save state before resetting deck.')
     }
-    this.#cards = [...this.#originalDeck]
+    this.#cards = [...this.#originalState]
+  }
+
+  get cards() {
+    return [...this.#cards]
   }
 }

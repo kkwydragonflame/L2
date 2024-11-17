@@ -1,6 +1,6 @@
 /**
  * @author Johanna Eriksson <je224gs@student.lnu.se>
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 export class KilleCard {
@@ -20,39 +20,30 @@ export class KilleCard {
     }
   }
 
-  get rank() {
-    return this.#rank
-  }
-
   /**
    * Returns the value of the card. Integers and floats.
    * @returns {number} - The value of the card.
    */
   valueOf() {
-    if (this.#rank === 'fool') {
-      return 0
-    } else if (this.#rank === 'flowerpot') {
-      return 0.1
-    } else if (this.#rank === 'wreath') {
-      return 0.2
-    } else if (this.#rank === 'tavern') {
-      return 13
-    } else if (this.#rank === 'cavalier') {
-      return 14
-    } else if (this.#rank === 'swine') {
-      return 15
-    } else if (this.#rank === 'hussar') {
-      return 16
-    } else if (this.#rank === 'cuckoo') {
-      return 17
-    } else if (this.#rank === 'harlequin') {
-      return 18
-    } else {
-      return parseInt(this.#rank)
+    const rankValues = {
+      fool: 0,
+      flowerpot: 0.1,
+      wreath: 0.2,
+      tavern: 13,
+      cavalier: 14,
+      swine: 15,
+      hussar: 16,
+      cuckoo: 17,
+      harlequin: 18
     }
+    return rankValues[this.#rank] ?? parseInt(this.#rank)
   }
 
   toString() {
     return `${this.#rank}`
+  }
+
+  get rank() {
+    return this.#rank
   }
 }

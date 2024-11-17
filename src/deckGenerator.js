@@ -1,5 +1,5 @@
 /**
- * The main module for generating card decks. Exports the function generateDeck.
+ * Module for generating a deck of cards, based on provided deck type.
  * @author Johanna Eriksson <je224gs@student.lnu.se>
  * @version 1.0.0
  */
@@ -15,10 +15,9 @@ export class DeckGenerator {
    * @returns {AbstractDeck} - A deck of cards.
    * @throws {Error} - Invalid deck type.
    */
-  static generateDeck(deckType) {
-    switch(deckType) {
+  static generateDeck (deckType) {
+    switch (deckType) {
       case 'standard':
-        // How to deal with jokers? Add a new deck type? Have user add jokers manually?
         return new StandardDeck()
       case 'uno':
         return new UnoDeck()
